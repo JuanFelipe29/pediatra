@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultorio Pediátrico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilos personalizados */
+    .navbar, .hero-section {
+      background-color: #66b2d8;
+      color: white;
+    }
+    .hero-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .hero-image {
+      border-radius: 50%;
+ 
+      object-fit: cover;
+    }
+    .card {
+      height: 100%;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .about-section .about-card {
+        margin-bottom: 20px;
+      }
+
+      
+    .contact-section {
+      background-color: #e9f7fa;
+      padding: 40px 20px;
+    }
+    .footer {
+      background-color: #66b2d8;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .floating-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 24px;
+        text-align: center;
+      }
+     /* Esti
+  /* Estilos de la tarjeta */
+  .map-card, .card {
+    width: 100%; /* Ocupa todo el ancho de la columna */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Ajuste de galería de imágenes */
+  .images-card {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten */
+    gap: 10px; /* Espacio entre imágenes */
+    margin-top: 20px;
+  }
+
+  .images-card img {
+    width: calc(50% - 5px); /* Dos imágenes por fila */
+    height: 100px; /* Ajuste de altura */
+    object-fit: cover; /* Para no cortar la imagen */
+    border-radius: 10px;
+  }
+    .footer {
+      background-color: #66b2d8;
+      color: white;
+      padding: 20px 0;
+    }
+    .footer h5 {
+      font-weight: bold;
+    }
+    .footer p, .footer a {
+      margin: 0;
+      color: white;
+    }
+    .footer a:hover {
+      color: #f1f1f1;
+      text-decoration: none;
+    }
+
+    .gallery-image {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery-image:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./src/image/logo.png" alt="Logo" class="nav-logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Quiénes somos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección Hero -->
+  <div class="hero-section d-flex flex-column align-items-center">
+    <img src="./src/image/logofit.png" alt="Doctor" class="hero-image mb-3">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2>A un pediatra nada le hace más feliz que ver a un niño sonreír</h2>
+        </div>
+        <div class="carousel-item">
+          <h2>Cuidamos a tus pequeños con amor y dedicación</h2>
+        </div>
+        <div class="carousel-item">
+          <h2>Tu tranquilidad es nuestra prioridad</h2>
+        </div>
+      </div>
+      <button style="display: none;" class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span  class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button style="display: none;" class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <a target="_blank" href="https://wa.me/573244572379"   class="btn btn-outline-light mt-4">Agenda tu cita</a>
+  </div>
+
+
+ <!-- Sección Sobre mí y Sobre nosotros -->
+<div class="container my-5 about-section">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card about-card">
+          <div class="card-body">
+            <h3 class="text-center">Sobre mí</h3>
+            <p class="text-center">Jhon Luis Alvear</p>
+            <p>Soy un profesional especialista en pediatría con amplia experiencia en el manejo de enfermedades que afectan a la población infantil. Mi enfoque se centra en brindar atención médica con un profundo sentido de sensibilidad y respeto, asegurando que cada niño reciba el cuidado que merece. Además, considero fundamental el apoyo y acompañamiento a todo el núcleo familiar, trabajando en conjunto para promover la salud y el bienestar integral de los pequeños. Mi compromiso es crear un ambiente acogedor y empático, donde cada familia se sienta valorada y escuchada en su proceso de atención médica.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card about-card">
+          <div class="card-body">
+            <h3  class="text-center">Sobre nosotros</h3>
+            <p  class="text-center">Consultorio Pediátrico</p>
+            <p>En el Consultorio Pediátrico Jhon Alvear, nos dedicamos a ofrecer una atención integral y compasiva a la población infantil y a sus familias. Nuestro compromiso es brindar un servicio de calidad que no solo atienda las necesidades médicas de los pequeños, sino que también apoye a cada miembro del núcleo familiar. Fomentamos relaciones basadas en la empatía, la sensibilidad y el respeto, asegurando que cada visita sea una experiencia positiva y enriquecedora.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Sección Por qué elegirnos -->
+<div class="contact-section text-center">
+  <h3>¿Por qué elegirnos?</h3>
+  <p class="mx-auto" style="max-width: 800px;">Elegir el Consultorio Pediátrico Jhon Alvear significa optar por atención pediátrica de calidad en un ambiente cálido y acogedor. Nos comprometemos a brindar un cuidado compasivo y personalizado, enfocándonos en el bienestar integral de cada niño y en la tranquilidad de sus familias. Aquí encontrarás profesionales dedicados y apasionados por la salud infantil, con amplia experiencia y el compromiso de acompañarte en cada paso del desarrollo de tus pequeños.</p>
+</div>
+
+<!-- Sección de Servicios -->
+<div class="container my-5">
+  <div class="row text-center">
+    <!-- Tarjeta de servicio 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="icon mb-3">
+            <i class="fas fa-stethoscope fa-3x text-primary"></i>
+          </div>
+          <h4 class="card-title">Médico pediatra</h4>
+          <p class="card-text">Se enfoca en proporcionar un entorno de atención segura y personalizada para tus hijos.</p>
+          <a target="_blank" href="https://wa.me/573244572379" class="btn btn-primary mt-3">Agendar cita</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta de servicio 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="icon mb-3">
+            <i class="fas fa-baby fa-3x text-primary"></i>
+          </div>
+          <h4 class="card-title">Asesoría lactancia materna</h4>
+          <p class="card-text">Sesión de apoyo y educación dirigida a madres y familias para un inicio saludable.</p>
+          <a target="_blank" href="https://wa.me/573244572379" class="btn btn-primary mt-3">Agendar cita</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta de servicio 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="icon mb-3">
+            <i class="fas fa-syringe fa-3x text-primary"></i>
+          </div>
+          <h4 class="card-title">Asesora de vacunación</h4>
+          <p class="card-text">Proporciona información detallada sobre el calendario de vacunación para tus hijos.</p>
+          <a target="_blank" href="https://wa.me/573244572379" class="btn btn-primary mt-3">Agendar cita</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Sección Contacto -->
+  <div class="contact-section text-center">
+    <h3>Contáctanos para reservar tu cita</h3>
+    <p>Reservar tus citas será fácil y sencillo</p>
+    <div class="d-flex justify-content-center my-4">
+      <a target="_blank" href="https://wa.me/573244572379" class="btn btn-success me-2">WhatsApp</a>
+      <a href="#" class="btn btn-primary" style="display: none;">Llámanos</a>
+    </div>
+  </div>
+
+<!-- Sección Mapa e Imágenes -->
+<div class="container my-5">
+  <div class="row d-flex">
+    <!-- Tarjeta del mapa -->
+    <div class="col-md-6 d-flex align-items-stretch">
+      <div class="card map-card">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Ubicación</h5>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.8643620783405!2d-75.38132852552144!3d6.14020642749989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442951c390a137%3A0x55a413342724346a!2sDr.%20Jhon%20Luis%20Alvear%20Florez%2C%20Pediatra!5e1!3m2!1ses-419!2sco!4v1731551138163!5m2!1ses-419!2sco"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjeta de galería de imágenes -->
+    <div class="col-md-6 d-flex align-items-stretch">
+      <div class="card">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Galería de Imágenes</h5>
+          <div class="images-card">
+            <!-- Imágenes de la galería -->
+            <img src="./src/image/CONSULTORIO.jpg" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-image">
+            <img src="./src/image/herosection.jpg" alt="Imagen 2" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-image">
+            <img src="./src/image/1.jpg" alt="Imagen 3" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-image">
+            <img src="./src/image/IMG_6669.jpg" alt="Imagen 4" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-image">
+            <img src="./src/image/SALA DE ESPERA 2.png" alt="Imagen 5" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-image">
+            <img src="./src/image/IMG_6681.jpg" alt="Imagen 6" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal de imagen -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Vista de Imagen</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="" id="modalImage" class="img-fluid" alt="Imagen ampliada">
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Footer -->
+<footer class="footer">
+  <div class="container py-4 text-center text-md-start">
+    <div class="row">
+      <!-- Sección Información -->
+      <div class="col-md-6 mb-3">
+        <h5 class="text-white">Consultorio Pediátrico Jhon Alvear</h5>
+        <p>👨🏻‍⚕️ Médico Pediatra</p>
+        <p>🍼 Asesoría lactancia materna</p>
+        <p>🩺 Asesoría en vacunación</p>
+        <p><i class="fas fa-map-marker-alt"></i> City Medica, consultorio 319, Rionegro, Antioquia</p>
+      </div>
+
+      <!-- Sección Redes Sociales -->
+      <div class="col-md-6 mb-3 text-center text-md-end">
+        <h5 class="text-white">Síguenos en redes sociales</h5>
+        <a href="https://www.instagram.com/jalvearpediatra" target="_blank" aria-label="Instagram" class="btn btn-outline-light btn-sm mx-1">
+          <i class="fab fa-instagram"></i> @jalvearpediatra
+        </a>
+      </div>
+    </div>
+    
+    <!-- Derechos reservados -->
+    <div class="text-center mt-3">
+      <p class="mb-0">© 2024 Consultorio Pediátrico. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+  <a href="https://wa.me/573244572379" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144l-2.494.654l.666-2.433l-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931a6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646c-.182-.065-.315-.099-.445.099c-.133.197-.513.646-.627.775c-.114.133-.232.148-.43.05c-.197-.1-.836-.308-1.592-.985c-.59-.525-.985-1.175-1.103-1.372c-.114-.198-.011-.304.088-.403c.087-.088.197-.232.296-.346c.1-.114.133-.198.198-.33c.065-.134.034-.248-.015-.347c-.05-.099-.445-1.076-.612-1.47c-.16-.389-.323-.335-.445-.34c-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992c.47.205.84.326 1.129.418c.475.152.904.129 1.246.08c.38-.058 1.171-.48 1.338-.943c.164-.464.164-.86.114-.943c-.049-.084-.182-.133-.38-.232"/></svg>
+  </a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Seleccionar todas las imágenes de la galería
+    const galleryImages = document.querySelectorAll(".gallery-image");
+    const modalImage = document.getElementById("modalImage");
+
+    galleryImages.forEach((img) => {
+      img.addEventListener("click", function () {
+        // Establecer la imagen del modal al src de la imagen seleccionada
+        modalImage.src = this.src;
+      });
+    });
+  });
+</script>
+</body>
+</html>
